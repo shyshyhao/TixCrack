@@ -12,13 +12,13 @@ public class Main {
         SimpleDateFormat dateFormatter =new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         Date firstTime = null;
         try {
-             firstTime = dateFormatter.parse("2016/11/05 12:28:00");
+             firstTime = dateFormatter.parse("2016/11/05 00:41:00");
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new DateTask(), firstTime, 200);
+        timer.scheduleAtFixedRate(new DateTask(), firstTime, 5000);
 
     }
 }
