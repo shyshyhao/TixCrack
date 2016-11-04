@@ -1,10 +1,24 @@
 package com.company;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Timer;
+
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
+        SimpleDateFormat dateFormatter =new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date firstTime = null;
+        try {
+             firstTime = dateFormatter.parse("2016/11/05 12:28:00");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
-        System.out.println("12323");
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new DateTask(), firstTime, 200);
+
     }
 }
